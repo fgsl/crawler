@@ -1,0 +1,20 @@
+{
+    "name": "fgsl/crawler",
+    "description": "Fgsl Crawler",
+    "type": "library",
+    "keywords": [
+        "crawler",
+        "fgsl",
+        "framework"
+    ],
+    "homepage": "https://github.com/fgsl/crawler",
+    "license": "AGPL",
+    "autoload": {
+        "psr-4": {
+            "Fgsl\\Crawler\\": "src/Fgsl/Crawler"
+        }
+    },
+    "require": {
+        "php": ">=5.6"
+    }
+}

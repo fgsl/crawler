@@ -18,15 +18,15 @@ class Filter
 	 * @param boolean $onlyFirst
 	 * @return array | integer
 	 */
-	public function getMatches($pattern, $subject, $onlyFirst = false)
+	public static function getMatches($pattern, $subject, $onlyFirst = false)
 	{
 		if ($onlyFirst){
-			$result = preg_match($pattern, $subject, $matches);
+			$result = preg_match("/$pattern/", $subject, $matches);
 		} else {
-			$result = preg_match_all($pattern, $subject, $matches);
+			$result = preg_match_all("/$pattern/", $subject, $matches);
 		}
 		
-		return $matches;
+		return $matches[0];
 	}
 	
 	/**
@@ -36,8 +36,8 @@ class Filter
 	 * @param string $replacement
 	 * @return array | string
 	 */
-	public function replaceMatches($pattern, $subject, $replacement)
+	public static function replaceMatches($pattern, $subject, $replacement)
 	{
-		return preg_replace($pattern, $replacement, $subject);
+		return preg_replace("/$pattern/", $replacement, $subject);
 	}
 }
